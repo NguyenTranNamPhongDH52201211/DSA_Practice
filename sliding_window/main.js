@@ -17,6 +17,24 @@ function longestLength(a) {
     return max;
 }
 
-let result = longestLength(a);
-console.log(result);
+
+let b=[2,3,1,2,4,3,0]
+function findMinLenght(a, target){
+    let minL=Infinity;
+    let l=0,r=0;
+    let sum=0;
+    for(r=0; r<a.length;r++){
+        sum+=a[r];
+        while(sum>=target){
+            minL=Math.min(minL,r-l+1);
+            sum-=a[l];
+            l++;
+        }
+    }
+
+    return minL;
+}
+//let result = longestLength(a);
+let result2=findMinLenght(b,7);
+console.log(result2);
 
